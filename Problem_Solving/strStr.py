@@ -1,5 +1,6 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
+
         if len(needle) == 0:
             return 0
 
@@ -11,7 +12,7 @@ class Solution:
             return haystack.index(needle)
 
 
-s = Solution()
-print(s.strStr("hello", "ll"))  # returns the first occurence (2)
-print(s.strStr("www", "ll"))   # returns -1 (-1)
-print(s.strStr("www", ""))     # returns 0  (0)
+inst = Solution()
+print(inst.strStr("hello", "ll"))  # returns the first occurence (2)
+print(inst.strStr("www", "ll"))   # returns -1 (-1)
+print(inst.strStr("www", ""))     # returns 0  (0)

@@ -1,6 +1,15 @@
+"""
+Usage:
+    * a small list is to be sorted
+    * cost of swapping does not matter
+    * checking of all the elements is compulsory
+    * cost of writing to a memory matters like in flash memory (number of writes/swaps is O(n) as compared to O(n2) of bubble sort)
+"""
 # The process is like sorting cards
 #   Index   Element
 # [   9   ,    5   ,    1   ,    4   ,    3   ]
+
+
 def insertion_sort(array):
     for step in range(1, len(array)):  # loop over[1:]
         element = array[step]
