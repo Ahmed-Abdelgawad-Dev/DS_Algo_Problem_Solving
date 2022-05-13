@@ -1,4 +1,5 @@
 """
+Time Complexity: O(n2)
 Usage:
     * a small list is to be sorted
     * cost of swapping does not matter
