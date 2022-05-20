@@ -7,14 +7,11 @@ Heaps Formula to detect index:
     i*2 => next element => 4
     (i*2)+1 => next after next => 5
     i//2 => parent element => 2
-                         1
-                        (3)
-                        /   \
-                  left 2     3 right
-                     (9)     (2)
-                    /   \     /
-                   4    5    6
-                 (1)   (4)  (5)
+       4
+       /\
+      7   9
+     /\   /\
+    1  3 6  5
 """
 
 
@@ -70,31 +67,64 @@ def delete(array, node):
 
 
 def heap_sort(A):
-    length = len(A)
-    # Build a max-heap
-    for i in range(length//2, -1, -1):
+    length = len(A)  # =7
+    """
+       4
+       /\
+      7   9
+     /\   /\
+    1  3 6  5
+    """
+    """
+    start from -1{5}, up to parents(n//2-1)
+    Means => Looping over 9,7,4 & decrease by 1
+    """
+    for i in range(length//2-1, -1, -1):
+        # Heapify
         heapify(A, length, i)
-    # Sorting: extracting elements one by one
+    """
+    Result: Max-Heap Array:
+       9
+       /\
+      6   7
+     /\   /\
+    5  3 1  4
+    """
+    """ 
+    start from -1{4}, up to index one after zero{6} excluding index 0
+    Looping over 4,1,3,5,7,6 in reversing order
+    excluding parent{9}==index 0
+    """
     for i in range(length-1, 0, -1):
+        """
+         4
+         /\
+        6     7
+        /\    /\
+        5  3  1  9
+        Swap parent with the last node and reheapify ...etc
+        """
         arr[0], arr[i] = arr[i], arr[0]
         heapify(A, i, 0)
 
 
 heap = []
 
-insert(heap, 3)
 insert(heap, 4)
+insert(heap, 7)
 insert(heap, 9)
+insert(heap, 1)
+insert(heap, 3)
+insert(heap, 6)
 insert(heap, 5)
-insert(heap, 2)
 
 print("Max-Heap Array:          ", heap)
 delete(heap, 4)
 print('Heap after deleted item: ', heap)
 print()
 
-arr = [3, 4, 9, 5, 2]
+arr = [4, 7, 9, 1, 3, 6, 5]
 heap_sort(arr)
 print("Sorted array: ")
 for i in range(len(arr)):
-    print(arr[i], end='   ')
+    print(arr[i], end='    ')
