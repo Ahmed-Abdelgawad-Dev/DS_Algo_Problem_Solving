@@ -1,1 +1,2 @@
 """Presents"""
+n = int(input())
