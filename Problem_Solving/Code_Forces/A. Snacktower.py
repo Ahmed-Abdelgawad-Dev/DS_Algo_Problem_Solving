@@ -9,6 +9,7 @@ for i in range(len(sizes)):
 				que.append(sizes[i])
 				print(*que[::-1], sep=' ')
 				que.clear()
+
 		else:
 			print(sizes[i])
 	else:
