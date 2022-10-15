@@ -1,8 +1,12 @@
-"""Good Number (Code_Forces)"""
-n, k = [int(x) for x in input().split()]
-result = 0
-for i in range(0, n):
-    _input = input()
-    if set(map(int, _input)).issuperset(set(range(0, k+1))):
-        result += 1
-print(result)
+"""A. Mountain Scenery"""
+n, k = map(int, input().split())
+vals = list(map(int, input().split()))
+
+for i in range(1, len(vals), 2):
+    if k > 0 and vals[i] -1 > vals[i-1] and vals[i] -1 > vals[i+1]:
+        vals[i] -= 1
+        k -= 1
+        if k == 0:
+            break
+if "__main__" == __name__:
+    print(' '.join(map(str,vals)))
