@@ -1,12 +1,9 @@
-"""A. Mountain Scenery"""
-n, k = map(int, input().split())
-vals = list(map(int, input().split()))
-
-for i in range(1, len(vals), 2):
-    if k > 0 and vals[i] -1 > vals[i-1] and vals[i] -1 > vals[i+1]:
-        vals[i] -= 1
-        k -= 1
-        if k == 0:
-            break
-if "__main__" == __name__:
-    print(' '.join(map(str,vals)))
+"A. Chewbaсca and Number"
+x = str(input())
+l = []
+for i in x:
+    if (9 - int(i)) == 0 or (9 - int(i)) > int(i):
+        l.append(i)
+    else:
+        l.append(str(9-int(i)))
+print(''.join(str(j) for j in l))
