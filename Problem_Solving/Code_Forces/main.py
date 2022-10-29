@@ -1,9 +1,8 @@
-"A. Chewbaсca and Number"
-x = str(input())
-l = []
-for i in x:
-    if (9 - int(i)) == 0 or (9 - int(i)) > int(i):
-        l.append(i)
+"""A. Ksenia and Pan Scales"""
+left, right = input().split('|')
+for i in input():
+    if len(left) < len(right):
+        left += i
     else:
-        l.append(str(9-int(i)))
-print(''.join(str(j) for j in l))
+        right += i
+    print(f'{left}|{right}' if len(left) == len(right) else 'Impossible')
