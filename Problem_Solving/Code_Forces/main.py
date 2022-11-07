@@ -1,8 +1,6 @@
-"""A. Ksenia and Pan Scales"""
-left, right = input().split('|')
-for i in input():
-    if len(left) < len(right):
-        left += i
-    else:
-        right += i
-    print(f'{left}|{right}' if len(left) == len(right) else 'Impossible')
+n, answer = int(input()), 1000000000
+directions, vals = [x for x in input()], [int(x) for x in input().split()]
+for v in range(n-1):
+    if directions[v] == 'R' and directions[v+1] == 'L':
+        answer = min(answer, (vals[v+1] - vals[v]) // 2)
+print('-1' if answer==1000000000 else answer)
